@@ -7,14 +7,14 @@ from datetime import date
 # Create your views here.
 def contact(request):
     today = date.today()
+    list=[]
     if request.method=="POST":
         form=InterestForm(request.POST)
         if form.is_valid():
             interests=form.cleaned_data['interests']
             hobbies=form.cleaned_data['hobbies']
-            genres=form.cleaned_data['genres']
+            genres=form.cleaned_data['genres'].capitalize()
             material=form.cleaned_data['material']
-            print(interests,hobbies,genres,material)
 
             conn = http.client.HTTPSConnection("jikan1.p.rapidapi.com")
 
@@ -28,11 +28,12 @@ def contact(request):
             res = conn.getresponse()
             data = res.read()
             y=json.loads(data.decode("utf-8"))
-            list=[]
+
             for x in y["anime"]:
                 for z in x["genres"]:
                     if(z["name"]==genres):
                         list.append(x["title"])
+
 
 
 
