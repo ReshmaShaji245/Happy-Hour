@@ -19,6 +19,7 @@
       padding: 20px;
       background: #84A59D;
       }
+      
       div {
         position: inline;
         left: 85px;
@@ -27,29 +28,25 @@
         color: #000000;
       }
       
-      #tagline {
-        margin-top: 60px;
-      }
-      
-      h4 {
+      h2, h4, h5 {
         margin: 30px;
       }
     </style>
   </head>
   <body>
     <header><div>Happy Hour<div></header>
-      <h2 id="tagline">Feeling sad? Frustrated? Or Overwhelmed?</h2>
+      <h2>Feeling sad? Frustrated? Or Overwhelmed?</h2>
       <h4>Don’t worry, we’re here to help you.. to give you your own happy hour</h4>
-      <h6>We will start with a few questions to personalize your happy hour</h6>
+      <h5>We will start with a few questions to personalize your happy hour</h5>
     <form method="post">
       {%csrf_token%}
       {{form}}
       <button type="submit" >Submit</button>
     </form>
     {% for x in list %}
-    <h2>
+    <h3>
       <a>{{x}}</a>
-    </h2>
+    </h3>
     {% endfor %}
   </body>
 </html>
