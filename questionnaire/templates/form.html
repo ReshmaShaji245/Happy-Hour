@@ -16,11 +16,25 @@ top: 0px;
 margin-bottom:20px;
 
 background: #84A59D;
-      
+      h3 {
+      position: absolute;
+width: 352px;
+height: 71px;
+left: 85px;
+top: 23px;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 64px;
+line-height: 70px;
+
+color: #000000;
+      }
     </style>
   </head>
   <body>
-    <header>Happy Hour</header>
+    <header><h3>Happy Hour<h3></header>
     <form method="post">
       {%csrf_token%}
       {{form}}
