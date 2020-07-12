@@ -1,2 +1,2 @@
-web: gunicorn Vandyhacks-Team.vandyhacks_team.wsgi
+web: gunicorn vandyhacks_team.wsgi
 
